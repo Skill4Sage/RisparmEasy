@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>RisparmEasy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ✅ Intestazione -->
+  <header>
+    <h1>RisparmEasy 📲</h1>
+  </header>
+
+  <!-- ✅ Dashboard Principale -->
+  <main class="dashboard">
+    <!-- 🗂️ Gestione Categorie -->
+    <section class="dashboard-section">
+      <h2>🗂️ Gestione Categorie</h2>
+      <div class="category-container">
+        <label for="category">Seleziona Categoria:</label>
+        <select id="category">
+          <option value="">Seleziona Categoria</option>
+        </select>
+        <button id="openCategoryModalBtn" class="create-category-btn">➕ Crea Nuova Categoria</button>
+      </div>
+    </section>
+
+    <!-- 🛒 Gestione Prodotti -->
+    <section class="dashboard-section">
+      <h2>🛒 Gestione Prodotti</h2>
+      <div class="form-container">
+        <input id="productName" placeholder="Nome Prodotto">
+        <input id="price" placeholder="Prezzo trovato" type="number">
+        <input id="unit" placeholder="Quantità (Litri/Kg/Pz)" type="number">
+        <input id="unitPrice" placeholder="Prezzo unitario" disabled>
+        <input id="store" placeholder="Negozio">
+        <button onclick="addProduct()">Aggiungi Prodotto</button>
+      </div>
+    </section>
+
+    <!-- 📦 Filtra e Visualizza Prodotti -->
+    <section class="dashboard-section-full">
+      <h2>📦 Prodotti Salvati</h2>
+      <label for="filterCategory">Filtra per Categoria:</label>
+      <select id="filterCategory">
+        <option value="">Tutte le Categorie</option>
+      </select>
+      <div id="productList"></div>
+    </section>
+  </main>
+
+  <!-- 🪟 Modal per Nuova Categoria -->
+  <div id="categoryModal" class="modal">
+    <div class="modal-content">
+      <h3>🗂️ Crea Nuova Categoria</h3>
+      <input id="newCategory" placeholder="Nome Categoria">
+      <button onclick="addCategory()">Salva Categoria</button>
+      <button class="close-btn" onclick="closeCategoryModal()">Chiudi</button>
+    </div>
+  </div>
+
+  <!-- ✅ Footer -->
+  <footer>
+    <p>&copy; 2024 RisparmEasy. Tutti i diritti riservati.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
