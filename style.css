@@ -223,3 +223,21 @@ footer {
     width: 100%;
   }
 }
+
+/* ✅ Effetto Selezione Prodotto */
+.product-card.selected {
+  border: 3px solid #e74c3c; /* Bordo rosso più spesso */
+  background-color: #ffe6e6; /* Sfondo leggermente rosato */
+  transform: scale(1.08); /* Leggera espansione */
+  animation: vibrate 0.2s ease-in-out 3; /* Vibrazione per segnalare l'azione */
+  transition: all 0.3s ease-in-out;
+}
+
+/* ✅ Animazione Vibrazione */
+@keyframes vibrate {
+  0% { transform: translateX(-2px); }
+  25% { transform: translateX(2px); }
+  50% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
