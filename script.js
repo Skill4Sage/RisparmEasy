@@ -151,7 +151,7 @@ function handleProductLongPress(productCard, category, productName) {
         renderProducts();
       }
       productCard.classList.remove('selected');
-    }, 1000);
+    }, 500);
   });
   productCard.addEventListener('mouseup', () => {
     clearTimeout(timeout);
