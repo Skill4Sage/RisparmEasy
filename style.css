@@ -121,6 +121,14 @@ select {
   transform: scale(1.05);
 }
 
+/* ✅ Effetto Selezione Prodotto */
+.product-card.selected {
+  border: 2px solid #e74c3c; /* Bordo rosso acceso */
+  background-color: #ffe6e6; /* Sfondo leggermente rosato */
+  transform: scale(1.05); /* Leggera espansione */
+  transition: all 0.2s ease-in-out;
+}
+
 /* ✅ MODAL */
 .modal {
   display: none; /* Nascosto di default */
@@ -177,36 +185,6 @@ select {
   color: #6a0dad;
 }
 
-/* ✅ Input Modal */
-.modal-content input {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-}
-
-/* ✅ Pulsanti Modal */
-.modal-content button {
-  width: 100%;
-  margin-top: 10px;
-  padding: 10px;
-  font-size: 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.modal-content button:first-child {
-  background-color: #6a0dad;
-  color: white;
-}
-
-.modal-content .close-btn {
-  background-color: #e74c3c;
-  color: white;
-}
-
 /* ✅ Footer */
 footer {
   text-align: center;
@@ -223,10 +201,6 @@ footer {
   }
 
   .dashboard-section {
-    padding: 10px;
-  }
-
-  .dashboard-section-full {
     padding: 10px;
   }
 
@@ -248,13 +222,4 @@ footer {
   .product-card {
     width: 100%;
   }
-}
-/* ✅ Filtra per Categoria */
-#filterCategory {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
 }
