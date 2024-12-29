@@ -138,9 +138,10 @@ function addProduct() {
 
 // ✅ Funzione per eliminare un prodotto con pressione prolungata
 function handleProductLongPress(productCard, category, productName) {
+  let timeout;
   productCard.addEventListener('mousedown', () => {
     productCard.classList.add('selected');
-    setTimeout(() => {
+    timeout = setTimeout(() => {
       if (confirm(`⚠️ Sei sicuro di voler eliminare il prodotto "${productName}" dalla categoria "${category}"?`)) {
         delete products[category][productName];
         if (Object.keys(products[category]).length === 0) {
@@ -152,7 +153,10 @@ function handleProductLongPress(productCard, category, productName) {
       productCard.classList.remove('selected');
     }, 1000);
   });
-  productCard.addEventListener('mouseup', () => productCard.classList.remove('selected'));
+  productCard.addEventListener('mouseup', () => {
+    clearTimeout(timeout);
+    productCard.classList.remove('selected');
+  });
 }
 
 function renderProducts() {
